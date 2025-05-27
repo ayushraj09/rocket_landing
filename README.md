@@ -201,7 +201,7 @@ params.Kp_y = new_value;
 
 ## Future Improvements
 
-### 1. Enhanced Gimbal Angle Stabilization
+### 1. Enhanced Pitch Angle Stabilization
 
 ### 2. Additional Enhancements
 - **3D Simulation**: Extend to three dimensional dynamics
