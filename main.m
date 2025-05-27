@@ -27,7 +27,7 @@ params.Kd_y = 50 ;
 params.Ki_y = 0.01;
 
 params.Kp_x = 10;
-params.Kd_x = 50;
+params.Kd_x = 60;
 params.Ki_x = 0.01;  
 
 params.Kp_theta = 2;
