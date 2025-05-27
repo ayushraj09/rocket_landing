@@ -218,10 +218,6 @@ Feel free to contribute improvements or report issues. Areas of particular inter
 - Additional physical effects
 - Performance metrics
 
-## License
-
-This project is open source and available under the MIT License.
-
 ---
 
 **Note**: This simulation is for educational and research purposes. Real rocket control systems require extensive safety analysis, redundancy, and testing that are beyond the scope of this project.
