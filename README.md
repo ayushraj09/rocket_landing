@@ -92,7 +92,7 @@ e_θ = θ - θ_desired
 α = -(K_p,θ × e_θ + K_d,θ × ω + K_i,θ × ∫e_θ dt)
 ```
 
-![Control Gimbal Angle History](image_1_url)
+![Control Gimbal Angle History](screenshots/gimbal_angle.png)
 
 The gimbal angle shows the control effort required to maintain stable flight and landing approach.
 
@@ -144,7 +144,7 @@ Kp_θ = 2,    Kd_θ = 1,    Ki_θ = 0.01    % Pitch
 
 ### Trajectory Analysis
 
-![Rocket Trajectory](image_2_url)
+![Rocket Trajectory](screenshots/multi_graph.png)
 
 The simulation results show:
 
@@ -155,7 +155,7 @@ The simulation results show:
 
 ### Landing Performance
 
-![Rocket Trajectory in X-Y Plane](image_3_url)
+![Rocket Trajectory in X-Y Plane](screenshots/rocket_trajectory.png)
 
 The X-Y trajectory plot demonstrates successful guidance from the initial position (2000, 2000) to the target landing site at the origin.
 
@@ -169,7 +169,7 @@ The X-Y trajectory plot demonstrates successful guidance from the initial positi
 
 ### Prerequisites
 - MATLAB R2018b or later
-- Control System Toolbox (recommended)
+- Control System Toolbox
 
 ### Running the Simulation
 
@@ -202,41 +202,13 @@ params.Kp_y = new_value;
 ## Future Improvements
 
 ### 1. Enhanced Gimbal Angle Stabilization
-- **Gimbal Rate Limiting**: Add constraints on gimbal angular velocity
-  ```matlab
-  alpha_rate_limit = deg2rad(10); % deg/s
-  alpha_dot = (alpha_new - alpha_old) / dt;
-  alpha_dot = max(min(alpha_dot, alpha_rate_limit), -alpha_rate_limit);
-  ```
-
-- **Gimbal Dynamics**: Include actuator dynamics for more realistic response
-  ```matlab
-  % Second-order gimbal dynamics
-  tau_gimbal = 0.1; % time constant
-  alpha_actual = alpha_cmd * (1 - exp(-t/tau_gimbal))
-  ```
-
-- **Advanced Gimbal Control**: Implement feedforward control for gimbal positioning
-  ```matlab
-  alpha_feedforward = atan2(a_x_desired, a_y_desired + g);
-  alpha_total = alpha_feedforward + alpha_feedback;
-  ```
 
 ### 2. Additional Enhancements
-- **3D Simulation**: Extend to full 6-DOF with yaw control
+- **3D Simulation**: Extend to three dimensional dynamics
 - **Sensor Noise**: Add realistic sensor models and noise
 - **Wind Disturbances**: Implement time-varying wind fields
 - **Fuel Consumption**: Model propellant mass depletion
-- **Landing Legs**: Add contact dynamics for touchdown
-- **Terrain Mapping**: Include obstacle avoidance capabilities
-- **Optimal Control**: Replace PID with model predictive control (MPC)
 - **Real-time Visualization**: Add animated rocket visualization during simulation
-
-### 3. Control System Improvements
-- **Adaptive Control**: Adjust gains based on flight conditions
-- **Robust Control**: Handle parameter uncertainties
-- **Trajectory Optimization**: Pre-compute optimal landing trajectories
-- **Fault Tolerance**: Handle engine failure scenarios
 
 ## Contributing
 
@@ -244,7 +216,7 @@ Feel free to contribute improvements or report issues. Areas of particular inter
 - Control system optimization
 - Enhanced visualization
 - Additional physical effects
-- Performance metrics and analysis tools
+- Performance metrics
 
 ## License
 
